@@ -1,0 +1,95 @@
+import { BsFillPatchPlusFill } from 'react-icons/bs'
+import style from './todoForm.module.css'
+import { useEffect, useRef, useState } from 'react'
+import { CiEdit } from 'react-icons/ci'
+import { GiCancel } from 'react-icons/gi'
+
+const TodoForm = (props) => {
+  const [todo, setTodo] = useState(props.edit ? props.edit.text : '')
+  const myRef = useRef()
+  const changeHandler = (e) => {
+    setTodo(e.target.value)
+    // console.log(e.target.value)
+  }
+  const buttonHndler = (e) => {
+    e.preventDefault()
+    if (!todo) {
+      alert(`You didn't write anything ...`)
+    } else {
+      props.submitTodo(todo)
+      setTodo('')
+    }
+  }
+  useEffect(() => {
+    // console.log(myRef.current.value);
+    myRef.current.focus()
+  })
+
+  return (
+    <form className={style.form} onSubmit={buttonHndler}>
+      <input
+        type="text"
+        className={style.formInput}
+        value={todo}
+        placeholder={props.edit ? 'Update To Do ...' : 'To Do ...'}
+        onChange={changeHandler}
+        ref={myRef}
+      />
+      <button type="submit" className={style.button} onClick={buttonHndler}>
+        {props.edit ? (
+          <CiEdit className={style.buttonIcon} />
+        ) : (
+          <BsFillPatchPlusFill className={style.buttonIcon} />
+        )}
+      </button>
+      {props.edit ? (
+        <button
+          type="button"
+          className={`${style.button} ${style.cancelIcon} `}
+          onClick={props.onCanselEdit}
+        >
+          <GiCancel className={`${style.buttonIcon} `} />
+        </button>
+      ) : (
+        ''
+      )}
+    </form>
+  )
+}
+
+export default TodoForm
+
+
+  /* {props.edit ? (
+  <>
+    <input
+      type="text"
+      className={style.formInput}
+      value={todo}
+      placeholder="Update To Do ..."
+      onChange={changeHandler}
+      ref={myRef}
+    />
+    <button type="submit" className={style.button} onClick={buttonHndler}>
+      <CiEdit className={style.buttonIcon} />
+    </button>
+    <button type="button" className={`${style.button} ${style.cancelIcon} `} onClick={props.onCanselEdit}>
+      <GiCancel className={`${style.buttonIcon} `} />
+    </button>
+  </>
+) : (
+  <>
+    <input
+      type="text"
+      className={style.formInput}
+      value={todo}
+      placeholder="To Do ..."
+      onChange={changeHandler}
+      ref={myRef}
+    />
+    <button type="submit" className={style.button} onClick={buttonHndler}>
+      <BsFillPatchPlusFill className={style.buttonIcon} />
+    </button>
+  </>
+)} */
+

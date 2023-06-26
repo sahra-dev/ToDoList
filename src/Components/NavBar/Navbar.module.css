@@ -1,0 +1,24 @@
+.Navbar{
+    width: 100vw;
+    height: 6rem;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Navbar h1 {
+    font-size: 1.5rem;
+}
+.Navbar p {
+    position: absolute;
+    right : 8rem;
+    font-size: 0.8rem;
+}
+.Navbar .selectCmp{
+    position: absolute;
+    left: 8rem;
+    width: 10rem;
+    top: 2rem;
+    font-size: 0.9rem;
+    color: rgb(99, 98, 98);
+}

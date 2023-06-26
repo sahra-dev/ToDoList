@@ -1,0 +1,12 @@
+.container{
+    width: 90vw;
+    height: 30rem;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 5rem;
+}
