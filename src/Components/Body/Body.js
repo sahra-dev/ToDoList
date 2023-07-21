@@ -16,7 +16,6 @@ const Body = () => {
     filterTodos(selectedOption)
   }, [todos, selectedOption])
   const addTodo = (input) => {
-    // console.log(input);
     const newInput = {
       id: Math.floor(Math.random() * 1000),
       text: input,
@@ -64,18 +63,6 @@ const Body = () => {
     filterTodos(e.value)
   }
   const filterTodos = (status) => {
-    // console.log(status);
-    // if(status==='completed'){
-    //   const filtered = todos.filter( todo => todo.isCompleted )
-    //   setFilteredTodos(filtered)
-    // }else if(status==='uncompleted'){
-    //   const filtered = todos.filter( todo => !todo.isCompleted)
-    //   setFilteredTodos(filtered)
-    // }
-    // else{
-    //   const filtered = [...todos]
-    //   setFilteredTodos(filtered)
-    // }
     switch (status) {
       case 'all':
         setFilteredTodos(todos)

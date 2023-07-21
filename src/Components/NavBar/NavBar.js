@@ -7,25 +7,24 @@ const options = [
   { value: 'uncompleted', label: 'UnCompleted' },
 ]
 const NavBar = (props) => {
-  
- 
-
   return (
     <div className={style.Navbar}>
-      <span>
-        <Select
-          className={style.selectCmp}
-          defaultValue={props.selectedOption}
-          onChange={props.onSelect}
-          options={options}
-        />
-      </span>
-      <h1> To Do List !</h1>
-      {props.value === 0 ? (
-        <p> Set your Today Todos</p>
-      ) : (
-        <p> Not Completed Todos : {props.value}</p>
-      )}
+      <h3> To Do List !</h3>
+      <div className={style.NavBarOption}>
+        <div>
+          <Select
+            className={style.selectCmp}
+            defaultValue={props.selectedOption}
+            onChange={props.onSelect}
+            options={options}
+          />
+        </div>
+        {props.value === 0 ? (
+          <p> Set Todos :)</p>
+        ) : (
+          <p> Todos : {props.value}</p>
+        )}
+      </div>
     </div>
   )
 }

@@ -1,12 +1,16 @@
 .container{
-    width: 90vw;
+    width: 90%;
     height: 30rem;
-    background-color: gray;
+    background-color: var(--purple-nav);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 2rem;
-    margin: 2rem;
-    border-radius: 5rem;
+    border-radius: 0 0 1rem 1rem;
+}
+@media screen and (max-width : 600px) {
+    .container{
+        height: 40rem;
+    }
 }

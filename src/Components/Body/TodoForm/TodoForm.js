@@ -21,7 +21,6 @@ const TodoForm = (props) => {
     }
   }
   useEffect(() => {
-    // console.log(myRef.current.value);
     myRef.current.focus()
   })
 
@@ -35,20 +34,29 @@ const TodoForm = (props) => {
         onChange={changeHandler}
         ref={myRef}
       />
-      <button type="submit" className={style.button} onClick={buttonHndler}>
+      {props.edit ? (
+        <button type='submit' className={`${style.button} ${style.editIcon} `} onClick={buttonHndler}>
+          <CiEdit className={`${style.buttonIcon}`} />
+        </button>
+      ):(
+        <button type='submit' className={`${style.button} `} onClick={buttonHndler}>
+          <BsFillPatchPlusFill className={style.buttonIcon} />
+        </button>
+      )}
+      {/* <button type="submit" className={style.button} onClick={buttonHndler}>
         {props.edit ? (
-          <CiEdit className={style.buttonIcon} />
+          <CiEdit className={`${style.buttonIcon}`} />
         ) : (
           <BsFillPatchPlusFill className={style.buttonIcon} />
         )}
-      </button>
+      </button> */}
       {props.edit ? (
         <button
           type="button"
           className={`${style.button} ${style.cancelIcon} `}
           onClick={props.onCanselEdit}
         >
-          <GiCancel className={`${style.buttonIcon} `} />
+          <GiCancel className={`${style.buttonIcon} ${style.iconCancel} `} />
         </button>
       ) : (
         ''
