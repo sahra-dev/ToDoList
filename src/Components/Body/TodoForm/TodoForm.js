@@ -9,7 +9,6 @@ const TodoForm = (props) => {
   const myRef = useRef()
   const changeHandler = (e) => {
     setTodo(e.target.value)
-    // console.log(e.target.value)
   }
   const buttonHndler = (e) => {
     e.preventDefault()
@@ -35,21 +34,22 @@ const TodoForm = (props) => {
         ref={myRef}
       />
       {props.edit ? (
-        <button type='submit' className={`${style.button} ${style.editIcon} `} onClick={buttonHndler}>
+        <button
+          type="submit"
+          className={`${style.button} ${style.editIcon} `}
+          onClick={buttonHndler}
+        >
           <CiEdit className={`${style.buttonIcon}`} />
         </button>
-      ):(
-        <button type='submit' className={`${style.button} `} onClick={buttonHndler}>
+      ) : (
+        <button
+          type="submit"
+          className={`${style.button} `}
+          onClick={buttonHndler}
+        >
           <BsFillPatchPlusFill className={style.buttonIcon} />
         </button>
       )}
-      {/* <button type="submit" className={style.button} onClick={buttonHndler}>
-        {props.edit ? (
-          <CiEdit className={`${style.buttonIcon}`} />
-        ) : (
-          <BsFillPatchPlusFill className={style.buttonIcon} />
-        )}
-      </button> */}
       {props.edit ? (
         <button
           type="button"
@@ -66,38 +66,3 @@ const TodoForm = (props) => {
 }
 
 export default TodoForm
-
-
-  /* {props.edit ? (
-  <>
-    <input
-      type="text"
-      className={style.formInput}
-      value={todo}
-      placeholder="Update To Do ..."
-      onChange={changeHandler}
-      ref={myRef}
-    />
-    <button type="submit" className={style.button} onClick={buttonHndler}>
-      <CiEdit className={style.buttonIcon} />
-    </button>
-    <button type="button" className={`${style.button} ${style.cancelIcon} `} onClick={props.onCanselEdit}>
-      <GiCancel className={`${style.buttonIcon} `} />
-    </button>
-  </>
-) : (
-  <>
-    <input
-      type="text"
-      className={style.formInput}
-      value={todo}
-      placeholder="To Do ..."
-      onChange={changeHandler}
-      ref={myRef}
-    />
-    <button type="submit" className={style.button} onClick={buttonHndler}>
-      <BsFillPatchPlusFill className={style.buttonIcon} />
-    </button>
-  </>
-)} */
-

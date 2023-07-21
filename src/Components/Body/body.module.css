@@ -1,16 +1,16 @@
-.container{
-    width: 90%;
-    height: 30rem;
-    background-color: var(--purple-nav);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2rem;
-    border-radius: 0 0 1rem 1rem;
+.container {
+  width: 90%;
+  height: 30rem;
+  background-color: var(--purple-nav);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 0 0 1rem 1rem;
 }
-@media screen and (max-width : 600px) {
-    .container{
-        height: 40rem;
-    }
+@media screen and (max-width: 600px) {
+  .container {
+    height: 40rem;
+  }
 }

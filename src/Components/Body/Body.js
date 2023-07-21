@@ -85,7 +85,7 @@ const Body = () => {
         value={value}
         todos={todos}
         selectedOption={selectedOption}
-        onSelect ={selectHandler}
+        onSelect={selectHandler}
       />
       <div className={style.container}>
         <TodoForm submitTodo={addTodo} />
