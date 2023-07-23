@@ -14,8 +14,6 @@
   color: var(--purple);
 }
 .icons {
-  position: absolute;
-  right: 7.5rem;
   width: 7rem;
   display: flex;
   justify-content: center;
@@ -54,18 +52,12 @@
 .todo.completed {
   opacity: 0.4;
 }
-@media screen and (max-width: 1000px) {
-  .icons {
-    right: 6rem;
-  }
-}
 @media screen and (max-width: 600px) {
   .todo p {
     font-size: 0.8rem;
   }
   .icons {
     width: 5.7rem;
-    right: 5rem;
   }
   .icon {
     font-size: 1.3rem;

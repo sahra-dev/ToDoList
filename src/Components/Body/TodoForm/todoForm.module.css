@@ -6,7 +6,7 @@
 }
 .formInput {
   all: unset;
-  width: 100%;
+  width: 90%;
   height: 2rem;
   padding: 0.4rem 1rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -14,6 +14,7 @@
   background-color: var(--secondery-white);
   font-size: 1.2rem;
   color: rgb(51, 51, 51);
+  transform: translate(1rem);
 }
 .button {
   all: unset;
@@ -25,8 +26,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  position: absolute;
-  right: 6.6rem;
+  margin-right: 0.2rem;
+  transform: translate(-2rem);
 }
 .button:hover {
   background-color: var(--soft-pink);
@@ -35,25 +36,12 @@
   font-size: 2rem;
   color: var(--purple);
 }
-.editIcon {
-  right: 7.6rem;
-}
+.editIcon ,
 .cancelIcon {
-  right: 10.3rem;
+  transform: translate(-4.5rem);
 }
 .iconCancel {
   color: var(--pink);
-}
-@media screen and (max-width: 1000px) {
-  .button {
-    right: 5.5rem;
-  }
-  .editIcon {
-    right: 6.5rem;
-  }
-  .cancelIcon {
-    right: 9.2rem;
-  }
 }
 @media screen and (max-width: 600px) {
   .formInput {
@@ -63,15 +51,13 @@
   .button {
     width: 1.8rem;
     height: 1.8rem;
-    right: 4rem;
+    transform: translate(-1rem);
   }
   .buttonIcon {
     font-size: 1.6rem;
   }
-  .editIcon {
-    right: 5.2rem;
-  }
+  .editIcon ,
   .cancelIcon {
-    right: 7rem;
+    transform: translate(-3rem);
   }
 }
